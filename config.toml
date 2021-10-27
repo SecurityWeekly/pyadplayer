@@ -1,0 +1,75 @@
+
+#
+# This option is required
+#
+# Specify the base directory where all of the files will live
+#
+[Dirs]
+  base_dir = "./shows"
+
+#
+# These are optional
+#
+# These files must exist in the base directory!
+#
+[Files]
+  # This video will always play first and only on the first segment
+  net_trailer_vid = 'network.mp4'
+  # This video will always play last, regardless of segment
+  blank_vid = "blank.mp4"
+
+# This option is required
+[Cmds]
+  audio_cmd = "mpv"
+  video_cmd = "mpv --aid=1 --fs --cache=yes --cache-on-disk=yes --cache-dir=/tmp"
+
+[Timing]
+  first_audio_delay = 8
+
+# The shows option is required
+
+#############################################################################################
+# PSW - Paul's Security Weekly
+#############################################################################################
+
+[[shows]]
+  name = "psw"
+  directory = "psw"
+
+  # These are optional:
+  show_audio_theme = "theme.wav"
+  show_audio_subtheme = "subtheme.wav"
+  show_intro_vid = "showintro.mp4"
+  host_montage_vid = "hostmontage.mp4"
+
+  [[shows.segments]]
+    type = "interview"
+    position = 1
+
+      #[[shows.segments.ads]]
+      #   video = "Barracuda_v2.mp4"
+      #   position = 1
+
+
+  [[shows.segments]]
+    type = "news"
+    position = 2
+
+        [[shows.segments.ads]]
+         video = "Proofpoint1.mp4"
+         position = 1
+
+ 
+  [[shows.segments]]
+    type = "news"
+    position = 3
+
+       [[shows.segments.ads]]
+         video = "QualysQ2.mp4"
+         position = 1
+
+       [[shows.segments.ads]]
+         video = "Netsparker.mp4"
+         position = 2
+
+
